@@ -39,52 +39,52 @@ public class Horse  extends Actor
         {
             // Check all squares around the currently looked at square
             // Square to the left
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY(), Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY(), Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() - 1 > -1) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(-1, 0))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY()), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
             // Square to the upper left
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() - 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() - 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() - 1 > -1 && sqrList.get(parent).getY() - 1 > -1) // Check if in bounds of grid
                     if (!check(parent, 14, new Point(-1, -1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() - 1), parent, sqrList.get(parent).getG(), 14, targetDestination)); // Add the square, takes 14 points to move diagonally, and know how many points it has taken to get here
             }
             // Square above
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX(), sqrList.get(parent).getY() - 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX(), sqrList.get(parent).getY() - 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getY() - 1 > -1) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(0, -1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX(), sqrList.get(parent).getY() - 1), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
             // Square to the upper right
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() - 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() - 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() + 1 < 10 && sqrList.get(parent).getY() - 1 > -1) // Check if in bounds of grid
                     if (!check(parent, 14, new Point(1, -1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() - 1), parent, sqrList.get(parent).getG(), 14, targetDestination)); // Add the square, takes 14 points to move diagonally, and know how many points it has taken to get here
             }
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY(), Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY(), Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(1, 0))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY()), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() + 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() + 1 < 10 && sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 14, new Point(1, 1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() + 1), parent, sqrList.get(parent).getG(), 14, targetDestination)); // Add the square, takes 14 points to move diagonally, and know how many points it has taken to get here
             }
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX(), sqrList.get(parent).getY() + 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX(), sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(0, 1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX(), sqrList.get(parent).getY() + 1), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
-            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() + 1, Bale.class).size() == 0) // Check if no rock
+            if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() - 1 > -1 && sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 14, new Point(-1, 1))) // Check if already found this square and see if this route is better than one that the square is a part of

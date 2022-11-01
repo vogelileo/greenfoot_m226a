@@ -45,11 +45,11 @@ public class Chart extends World
                 
                 for(int i=0;i<25;i++){
                     int[] location = getRandomFreeLocation();
-                    addObject(new Bale(), location[0], location[1]);
+                    addObject(new Hay(), location[0], location[1]);
                     
                 }
             
-                setBackground("cell.jpg");
+                setBackground("floor.png");
                 started=true;
             }
     }
