@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Chart
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Chart\ here.\r\n\ \r\n\ @author\ Taylor\ Born\r\n\ @version\ January\ 2010\r\n
+comment1.params=
+comment1.target=Chart()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=Counter\ getCounter()
+comment4.params=
+comment4.target=int[]\ getRandomFreeLocation()
+numComments=5

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Horse
+comment0.text=\r\n\ Turtle\r\n\ \r\n\ @author\ Taylor\ Born\r\n\ @version\ January\ 2010\r\n
+comment1.params=x\ y
+comment1.target=Horse(int,\ int)
+comment2.params=pPosition\ startPosition
+comment2.target=void\ findPath(java.awt.Point,\ java.awt.Point)
+comment3.params=
+comment3.target=void\ makePath()
+comment4.params=parent\ cost\ spot
+comment4.target=boolean\ check(int,\ int,\ java.awt.Point)
+comment5.params=x\ y
+comment5.target=void\ setLocation(int,\ int)
+comment6.params=
+comment6.target=void\ act()
+numComments=7
