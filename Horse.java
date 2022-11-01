@@ -1,6 +1,4 @@
-import greenfoot.Actor;
-import greenfoot.MouseInfo;
-import greenfoot.Greenfoot;
+import greenfoot.*;
 import java.util.ArrayList;
 import java.awt.Point;
 
@@ -19,6 +17,7 @@ public class Horse  extends Actor
     private boolean target; // If found destination
     private Point targetDestination; // Where I want to go
     private int step = 0; // Slow down travel speed
+    private boolean resized = false;
     
     private static final int CODE_ID = 71;
     
@@ -154,6 +153,13 @@ public class Horse  extends Actor
     }
     public void act() 
     {
+        if(!resized) {
+            GreenfootImage image = getImage();  
+            image.scale(60, 60);
+            setImage(image);
+            
+            resized = true;
+        }
         step++;
         if (step > 6)
         {

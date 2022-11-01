@@ -8,12 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Carrot extends Actor
 {
+    private boolean resized = false;
     /**
      * Act - do whatever the Carrot wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        if(!resized) {
+            GreenfootImage image = getImage();  
+            image.scale(60, 60);
+            setImage(image);
+            
+            resized = true;
+        }
+        
         if(isTouching(Horse.class)){
             int[] location = getRandomFreeLocation();
             setLocation(location[0], location[1]);
