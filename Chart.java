@@ -28,6 +28,7 @@ public class Chart extends World
                 timer.removeTime(1);
                 if(timer.totalTime < 1){
                     //Put endscreen here
+                    Greenfoot.setWorld(new GameOver());
                     Greenfoot.stop();
                 }
             }
@@ -39,9 +40,6 @@ public class Chart extends World
                 addObject(new Horse(1, 1), 1, 1);
                 int[] carrotLocation = getRandomFreeLocation();
                 addObject(new Carrot(), carrotLocation[0], carrotLocation[1]);
-                
-                GreenfootSound bgMusic = new GreenfootSound("./sounds/CountryRoads.mp3");
-                bgMusic.playLoop();
                 
                 for(int i=0;i<25;i++){
                     int[] location = getRandomFreeLocation();
