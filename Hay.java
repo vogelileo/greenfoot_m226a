@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Taylor Born
  * @version January 2010
  */
-public class Bale  extends Actor
+public class Hay extends Actor
 {
        
 }
