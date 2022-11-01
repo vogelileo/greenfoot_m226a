@@ -39,6 +39,10 @@ public class Chart extends World
                 addObject(new Horse(1, 1), 1, 1);
                 int[] carrotLocation = getRandomFreeLocation();
                 addObject(new Carrot(), carrotLocation[0], carrotLocation[1]);
+                
+                GreenfootSound bgMusic = new GreenfootSound("./sounds/CountryRoads.mp3");
+                bgMusic.playLoop();
+                
                 for(int i=0;i<25;i++){
                     int[] location = getRandomFreeLocation();
                     addObject(new Hay(), location[0], location[1]);
