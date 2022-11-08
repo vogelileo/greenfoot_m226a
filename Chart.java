@@ -28,7 +28,7 @@ public class Chart extends World
                 timer.removeTime(1);
                 if(timer.totalTime < 1){
                     //Put endscreen here
-                    Greenfoot.setWorld(new GameOver());
+                    Greenfoot.setWorld(new GameOver(counter.getCounter()));
                     Greenfoot.stop();
                 }
             }
