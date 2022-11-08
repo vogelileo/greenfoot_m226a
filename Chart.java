@@ -37,6 +37,11 @@ public class Chart extends World
                     Greenfoot.setWorld(new GameOver(counter.getCounter()));
                     Greenfoot.stop();
                 }
+                
+                if (Greenfoot.isKeyDown("h")){
+                    removeObjects(getObjects(Hay.class));
+                    hayGenerator(45);
+                };
             }
         /**
          * If game is about to start, initialize all important game objects
@@ -50,11 +55,7 @@ public class Chart extends World
                 int[] carrotLocation = getRandomFreeLocation();
                 addObject(new Carrot(), carrotLocation[0], carrotLocation[1]);
                 
-                for(int i=0;i<25;i++){
-                    int[] location = getRandomFreeLocation();
-                    addObject(new Hay(), location[0], location[1]);
-                    
-                }
+                hayGenerator(45);
             
                 setBackground("floor.png");
                 started=true;
@@ -65,6 +66,13 @@ public class Chart extends World
      */
     public Counter getCounter(){
         return counter;
+    }
+    private void hayGenerator(int amount){
+        for(int i=0;i<amount;i++){
+                    int[] location = getRandomFreeLocation();
+                    addObject(new Hay(), location[0], location[1]);
+                    
+                }
     }
     /**
      * Get an free location on the board
@@ -85,4 +93,5 @@ public class Chart extends World
     }
         return arr;
     }
+    
 }

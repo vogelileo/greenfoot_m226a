@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Carrot
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Carrot\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ This\ is\ the\ target\ for\ the\ horse\r\n\ \r\n\ @author\ Jan\ Schweizer,\ Leo\ Vogel\r\n\ @version\ November\ 2022\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Carrot\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ act\ for\ class\ Carot\r\n
 comment2.params=
 comment2.target=int[]\ getRandomFreeLocation()
+comment2.text=\r\n\ Get\ an\ free\ location\ on\ the\ board\r\n\ @return\ arr[posX,\ posY]\ of\ free\ location\r\n
 numComments=3

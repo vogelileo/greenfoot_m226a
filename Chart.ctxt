@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Chart
-comment0.text=\r\n\ The\ Chart\ is\ in\ the\ main\ game\r\n\ \r\n\ @author\ Jan\ Schweizer,\ Leo\ Vogel\r\n\ @version\ January\ 2010\r\n
+comment0.text=\r\n\ The\ Chart\ is\ in\ the\ main\ game\r\n\ \r\n\ @author\ Jan\ Schweizer,\ Leo\ Vogel\r\n\ @version\ November\ 2022\r\n
 comment1.params=
 comment1.target=Chart()
 comment1.text=\r\n\ Inizialize\ Chart\ and\ start\ A*\ Alogrithm\r\n
@@ -9,7 +9,9 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=Counter\ getCounter()
 comment3.text=\r\n\ @return\ counter\r\n
-comment4.params=
-comment4.target=int[]\ getRandomFreeLocation()
-comment4.text=\r\n\ Get\ an\ free\ location\ on\ the\ board\r\n\ @return\ arr[posX,\ posY]\ of\ free\ location\r\n
-numComments=5
+comment4.params=amount
+comment4.target=void\ hayGenerator(int)
+comment5.params=
+comment5.target=int[]\ getRandomFreeLocation()
+comment5.text=\r\n\ Get\ an\ free\ location\ on\ the\ board\r\n\ @return\ arr[posX,\ posY]\ of\ free\ location\r\n
+numComments=6
