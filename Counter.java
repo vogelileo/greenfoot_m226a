@@ -20,7 +20,7 @@ public class Counter extends Actor {
      */
     public void bumpCount(int amount) { 
         totalCount += amount; 
-        setImage(new GreenfootImage("" + totalCount, 20, Color.WHITE, Color.BLACK)); 
+        setImage(new GreenfootImage("" + totalCount + " P", 20, Color.WHITE, Color.BLACK)); 
     }
     /**
      * @return int totalcount - returns current count

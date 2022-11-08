@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=Timer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Timer\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Timer\r\n\ \r\n\ @author\ Jan\ Schweizer,\ Leo\ Vogel\r\n\ @version\ November\ 2022\r\n
 comment1.params=
 comment1.target=Timer()
+comment1.text=\r\n\ Constuctor\ for\ object\ of\ Timer\r\n
 comment2.params=amount
 comment2.target=void\ removeTime(int)
+comment2.text=\r\n\ @param\ int\ amount\ -\ amount\ to\ remove\r\n
 comment3.params=amount
 comment3.target=void\ setTime(int)
+comment3.text=\r\n\ @param\ int\ amount\ -\ amount\ to\ set\r\n
 comment4.params=
 comment4.target=void\ renderTime()
+comment4.text=\r\n\ Converts\ timer\ to\ image\r\n
 numComments=5

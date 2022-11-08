@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Counter
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Counter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Counter\r\n\ \r\n\ @author\ Jan\ Schweizer,\ Leo\ Vogel\r\n\ @version\ November\ 2022\r\n
 comment1.params=
 comment1.target=Counter()
+comment1.text=\r\n\ constructor\ for\ counte\ rclass\r\n
 comment2.params=amount
 comment2.target=void\ bumpCount(int)
+comment2.text=\r\n\ @param\ int\ amount\ -\ increase\ by\ amonut\r\n
 comment3.params=
 comment3.target=int\ getCounter()
+comment3.text=\r\n\ @return\ int\ totalcount\ -\ returns\ current\ count\r\n
 numComments=4

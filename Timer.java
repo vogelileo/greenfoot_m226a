@@ -34,7 +34,7 @@ public class Timer extends Actor
     * Converts timer to image
     */
     public void renderTime(){
-        setImage(new GreenfootImage("" + (int)Math.ceil(totalTime / 60), 20, Color.WHITE, Color.BLACK));
+        setImage(new GreenfootImage("" + (int)Math.ceil(totalTime / 60) + " s", 20, Color.WHITE, Color.BLACK));
         
     }
 }
