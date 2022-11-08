@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Rock here.
+ * The Chart is in the main game
  * 
- * @author Taylor Born
- * @version January 2010
+ * @author Jan Schweizer, Leo Vogel
+ * @version November 2022
  */
 public class Hay extends Actor
 {

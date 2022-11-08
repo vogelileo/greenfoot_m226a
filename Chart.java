@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Chart here.
+ * The Chart is in the main game
  * 
- * @author Taylor Born
- * @version January 2010
+ * @author Jan Schweizer, Leo Vogel
+ * @version November 2022
  */
 public class Chart extends World
 {
@@ -12,18 +12,24 @@ public class Chart extends World
     private boolean started = false;
     private Counter counter = new Counter();
     private Timer timer = new Timer();
-    
+    /**
+     * Inizialize Chart and start A* Alogrithm
+     */
+   
     public Chart()
-    {    
+    {   
         super(10, 10, 60);
         GreenfootImage back = new GreenfootImage(10, 10);
         back.fill();
         setBackground(back);
-        CodeKeyUser.enter();
+        CodeKeyUser.enter(); //Starting for A*
         Greenfoot.start();
     }
     public void act()
     {        
+        /**
+         * If the game loop is started remove from timer, when timer 0 go to Game Over screen
+         */
             if(started){
                 timer.removeTime(1);
                 if(timer.totalTime < 1){
@@ -32,6 +38,9 @@ public class Chart extends World
                     Greenfoot.stop();
                 }
             }
+        /**
+         * If game is about to start, initialize all important game objects
+         */
             if (!started)
             {
                 timer.setTime(3600);
@@ -51,9 +60,16 @@ public class Chart extends World
                 started=true;
             }
     }
+    /**
+     * @return counter
+     */
     public Counter getCounter(){
         return counter;
     }
+    /**
+     * Get an free location on the board
+     * @return arr[posX, posY] of free location
+     */
     public int[] getRandomFreeLocation(){
         boolean found = false;
         int[] arr = {0,0};
