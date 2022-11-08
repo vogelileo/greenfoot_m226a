@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.awt.Point;
 
 /**
- * Turtle
+ * Horse
  * 
- * @author Taylor Born
- * @version January 2010
+ * @author Jan Schweizer, Leo Vogel
+ * @version November 2022
  */
 public class Horse  extends Actor
 {
@@ -20,11 +20,18 @@ public class Horse  extends Actor
     private boolean resized = false;
     
     private static final int CODE_ID = 71;
-    
+    /**
+     * @param int x - x coord
+     * @param in y - y coord
+     */
     public Horse(int x, int y)
     {
         targetDestination = new Point(x, y); // Where I want to be
     }
+    /**
+     * @param Point pPosition
+     * @param Point startPosition
+     */
     public void findPath(Point pPosition, Point startPosition)
     {
         targetDestination = pPosition; // Get destination
@@ -66,24 +73,28 @@ public class Horse  extends Actor
                     if (!check(parent, 14, new Point(1, -1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() - 1), parent, sqrList.get(parent).getG(), 14, targetDestination)); // Add the square, takes 14 points to move diagonally, and know how many points it has taken to get here
             }
+            // Square to right
             if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY(), Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(1, 0))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY()), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
+            // Square bottom right
             if (getWorld().getObjectsAt(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() + 1 < 10 && sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 14, new Point(1, 1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX() + 1, sqrList.get(parent).getY() + 1), parent, sqrList.get(parent).getG(), 14, targetDestination)); // Add the square, takes 14 points to move diagonally, and know how many points it has taken to get here
             }
+            //Square bottom
             if (getWorld().getObjectsAt(sqrList.get(parent).getX(), sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
                     if (!check(parent, 10, new Point(0, 1))) // Check if already found this square and see if this route is better than one that the square is a part of
                         sqrList.add(new Square(new Point(sqrList.get(parent).getX(), sqrList.get(parent).getY() + 1), parent, sqrList.get(parent).getG(), 10, targetDestination)); // Add the square, takes 10 points to move horizontally or vertically, and know how many points it has taken to get here
             }
+            ////Square bottom left
             if (getWorld().getObjectsAt(sqrList.get(parent).getX() - 1, sqrList.get(parent).getY() + 1, Hay.class).size() == 0) // Check if no rock
             {
                 if (sqrList.get(parent).getX() - 1 > -1 && sqrList.get(parent).getY() + 1 < 10) // Check if in bounds of grid
@@ -128,6 +139,13 @@ public class Horse  extends Actor
             routeIndex = myRoute.size() - 2; // When start to move, starting at beginning
         }
     }
+    /**
+     * Checks if Square is available
+     * @param int parent
+     * @param int cost
+     * @param Point spot
+     * @return boolean - if already done square
+     */
     private boolean check(int parent, int cost, Point spot)
     {
         boolean flag = false;
@@ -145,6 +163,11 @@ public class Horse  extends Actor
         }
         return flag; // return if found that already have square
     }
+    /**
+     * To move Horse
+     * @param int x - x coord
+     * @param int y - y coord
+     */
     public void setLocation(int x, int y)
     {
         if (targetDestination.getX() == getX() && targetDestination.getY() == getY())
@@ -192,7 +215,9 @@ public class Horse  extends Actor
         if (Greenfoot.mousePressed(null))
             findPath(new Point(mouse.getX(), mouse.getY()), new Point(getX(), getY()));
     }
-    
+    /**
+     * Square
+     */
     private class Square  
     {
         private Point position; // Position of square
@@ -201,6 +226,9 @@ public class Horse  extends Actor
         private int g; // Score to get to this position. 10s added for every vertical and horizontal move and 14s for every diagonal move since a diagonal move is a farther move
         private int h; // Score estimate for how many vertical and horizontal moves, regardless of obstacles
     
+        /**
+         * Constructor of Square objects
+         */
         public Square(Point position, int parent, int parentG, int thisG, Point destination)
         {
             this.position = position; // Position
@@ -208,42 +236,72 @@ public class Horse  extends Actor
             g = parentG + thisG; // Parent's score plus score took to get from there to here
             h = (int)(Math.abs(position.getX() - destination.getX()) + Math.abs(position.getY() - destination.getY())) * 10; // Vertical and horizontal spaces between here and destination
         }
+        /**
+         * @return Point position
+         */
         public Point getPosition()
         {
             return position;
         }
+        /**
+         * @return int x coord
+         */
         public int getX()
         {
             return (int)position.getX();
         }
+        /**
+         * @return int y coord
+         */
         public int getY()
         {
             return (int)position.getY();
         }
+        /**
+         * @return int parent
+         */
         public int getParent()
         {
             return parent;
         }
+        /**
+         * @param int parent - new parent
+         */
         public void adopt(int parent)
         {
             this.parent = parent;
         }
+        /**
+         * @return boolean closed
+         */
         public boolean isClosed()
         {
             return closed;
         }
+        /**
+         * close Square
+         */
         public void close()
         {
             closed = true;
         }
+        /**
+         * @return int g
+         */
         public int getG()
         {
             return g;
         }
+        /**
+         * Change g value
+         */
         public void changeG(int newG)
         {
             g = newG;
         }
+        /**
+         * @return h
+         */
         public int getH()
         {
             return h;
